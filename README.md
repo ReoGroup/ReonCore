@@ -13,6 +13,6 @@ This is just a small part of what our plugin can do! If you have any questions a
 <div align="center">
 <br />
 <p>
-    <a href="https://discord.gg/NFAbAyqZpr"><img src="https://img.shields.io/discord/824637278822334464?color=7289da&label=Discord&logo=discord&logoColor=rad" alt="Online"></a>
+    <a href="https://discord.gg/NFAbAyqZpr"><img src="https://img.shields.io/discord/724237693113860127?color=7289da&label=Discord&logo=discord&logoColor=rad" alt="Online"></a>
 </p>
 </div>
