@@ -4,6 +4,7 @@
 #                        #
 ###########################
 
+enabled: true
 token: "bot token here"
 automodChannelId: "000000000"
 automodMcChannelId: "0000000"
@@ -12,7 +13,10 @@ chatMcLogChannelId: "00000000"
 autoroleId: "0000000"
 reportsChannelId: "000000000"
 statusesBot: ["Discord API!","ReonCore Plugin","github.com/ReoGroup/ReonCore"]
-statusesType: "WATCHING"
+loadingStatus: "loading..."
+# Change rich presence action. Playing, Watching and other.
+statusType: "WATCHING"
+status: "ONLINE"
 
 ##########################
 #                        #
