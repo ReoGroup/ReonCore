@@ -1,0 +1,21 @@
+##########################
+#                        #
+#   Discord Bot Config   #
+#                        #
+###########################
+
+token: "bot token here"
+automodChannelId: "000000000"
+automodMcChannelId: "0000000"
+modLogChannelId: "0000000"
+chatMcLogChannelId: "00000000"
+autoroleId: "0000000"
+reportsChannelId: "000000000"
+statusesBot: ["Discord API!","ReonCore Plugin","github.com/ReoGroup/ReonCore"]
+statusesType: "WATCHING"
+
+##########################
+#                        #
+#    Minecraft Config    #
+#                        #
+###########################
