@@ -6,12 +6,12 @@
 
 enabled: true
 token: "bot token here"
-automodChannelId: "000000000"
-automodMcChannelId: "0000000"
-modLogChannelId: "0000000"
-chatMcLogChannelId: "00000000"
-autoroleId: "0000000"
-reportsChannelId: "000000000"
+automodChannelId: "0"
+automodMcChannelId: "0"
+modLogChannelId: "0"
+chatMcLogChannelId: "0"
+autoroleId: "0"
+reportsChannelId: "0"
 statusesBot: ["Discord API!","ReonCore Plugin","github.com/ReoGroup/ReonCore"]
 loadingStatus: "loading..."
 # Change rich presence action. Playing, Watching and other.

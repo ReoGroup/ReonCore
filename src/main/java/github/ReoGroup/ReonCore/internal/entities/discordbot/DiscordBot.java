@@ -6,36 +6,43 @@ package github.ReoGroup.ReonCore.internal.entities.discordbot;
  */
 
 import github.ReoGroup.ReonCore.BungeeMain.Main;
-import github.ReoGroup.ReonCore.internal.entities.BotConfig;
+import github.ReoGroup.ReonCore.internal.entities.Config;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
+import net.md_5.bungee.api.ChatColor;
 
-import javax.security.auth.login.LoginException;
 import java.util.Arrays;
 
 public class DiscordBot {
-    public final static GatewayIntent[] INTENTS = {GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MESSAGE_REACTIONS, GatewayIntent.GUILD_VOICE_STATES};
-    public BotConfig config = new BotConfig();
+    private final static GatewayIntent[] INTENTS = {GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MESSAGE_REACTIONS, GatewayIntent.GUILD_VOICE_STATES};
+    private Config config = new Config();
+    private JDA jda;
 
     public void init() {
+        // NEED FIX CONFIG LOADING
         try {
-            JDA jda = JDABuilder.create(config.getConfig("token").toString(), Arrays.asList(INTENTS))
+            jda = JDABuilder.create(config.getString("token").toString(), Arrays.asList(INTENTS))
                     .enableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE)
                     .disableCache(CacheFlag.ACTIVITY, CacheFlag.CLIENT_STATUS, CacheFlag.EMOTE, CacheFlag.ONLINE_STATUS)
-                    .setActivity(Activity.playing(config.getConfig("loadingStatus").toString()))
-                    .setStatus(
-                    switch(config.getConfig("status").toString()) {
-                        case "DND" -> OnlineStatus.DO_NOT_DISTURB;
-                        default -> OnlineStatus.ONLINE;
-                    })
+                    .setActivity(Activity.playing(config.getString("loadingStatus")))
+                    .setStatus(OnlineStatus.ONLINE)
                     .setBulkDeleteSplittingEnabled(true)
                     .build();
-        } catch (LoginException e) {
-            Main.getInstance().getLogger().severe("Invalid token!");
+        } catch (Exception e) {
+            Main.getInstance().getLogger().severe(ChatColor.RED + "Exception occurred: " + e.getMessage());
         }
+    }
+
+    public void shutdown() {
+        Main.getInstance().getLogger().info("Shutting down discord bot...");
+        jda.shutdownNow();
+    }
+
+    public JDA getJda() {
+        return jda;
     }
 }
