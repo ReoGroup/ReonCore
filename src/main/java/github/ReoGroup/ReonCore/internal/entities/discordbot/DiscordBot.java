@@ -8,6 +8,7 @@ package github.ReoGroup.ReonCore.internal.entities.discordbot;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import github.ReoGroup.ReonCore.BungeeMain.Main;
 import github.ReoGroup.ReonCore.internal.entities.Config;
+import github.ReoGroup.ReonCore.listeners.discord.GuildCreatedListener;
 import github.ReoGroup.ReonCore.listeners.discord.ReadyListener;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -37,7 +38,7 @@ public class DiscordBot {
                     .disableCache(CacheFlag.ACTIVITY, CacheFlag.CLIENT_STATUS, CacheFlag.EMOTE, CacheFlag.ONLINE_STATUS)
                     .setActivity(Activity.playing(config.getString("loadingStatus")))
                     .setStatus(getConfigStatus())
-                    .addEventListeners(new ReadyListener())
+                    .addEventListeners(new ReadyListener(), new GuildCreatedListener())
                     .setBulkDeleteSplittingEnabled(true)
                     .build();
         } catch (LoginException e) {
