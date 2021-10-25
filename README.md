@@ -9,7 +9,7 @@
 This is the best open source plugin for full server protection! We include several types of protection that are listed below:
 - Protection against spam messages;
 - Protection from scam messages, protect your server from fraud!
-- Protection from DDOS attacks in the form of bots!
+- Protection against attacks on the server in the form of bots!
 - Protect your server from the PR of other servers!
 - Protect your server from bad moderators! Follow all the actions in the discord!
 - Get multiple tools for server moderation!
