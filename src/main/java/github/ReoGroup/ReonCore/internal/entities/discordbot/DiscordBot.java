@@ -15,25 +15,36 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
 import net.md_5.bungee.api.ChatColor;
 
+import javax.security.auth.login.LoginException;
 import java.util.Arrays;
 
 public class DiscordBot {
     private final static GatewayIntent[] INTENTS = {GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MESSAGE_REACTIONS, GatewayIntent.GUILD_VOICE_STATES};
-    private Config config = new Config();
+    private Config config;
     private JDA jda;
 
     public void init() {
-        // NEED FIX CONFIG LOADING
+        config = Main.getInstance().getConfig();
+
         try {
             jda = JDABuilder.create(config.getString("token").toString(), Arrays.asList(INTENTS))
                     .enableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE)
                     .disableCache(CacheFlag.ACTIVITY, CacheFlag.CLIENT_STATUS, CacheFlag.EMOTE, CacheFlag.ONLINE_STATUS)
                     .setActivity(Activity.playing(config.getString("loadingStatus")))
-                    .setStatus(OnlineStatus.ONLINE)
+                    .setStatus(getConfigStatus())
                     .setBulkDeleteSplittingEnabled(true)
                     .build();
-        } catch (Exception e) {
-            Main.getInstance().getLogger().severe(ChatColor.RED + "Exception occurred: " + e.getMessage());
+        } catch (LoginException e) {
+            Main.getInstance().getLogger().severe(ChatColor.RED + "Exception occurred: " + e);
+        }
+    }
+
+    private OnlineStatus getConfigStatus() {
+        switch(config.getString("status")) {
+            case "DND": return OnlineStatus.DO_NOT_DISTURB;
+            case "IDLE": return OnlineStatus.IDLE;
+            case "INVISIBLE": return OnlineStatus.INVISIBLE;
+            default: return OnlineStatus.ONLINE;
         }
     }
 

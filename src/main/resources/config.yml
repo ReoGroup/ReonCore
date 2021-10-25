@@ -14,8 +14,9 @@ autoroleId: "0"
 reportsChannelId: "0"
 statusesBot: ["Discord API!","ReonCore Plugin","github.com/ReoGroup/ReonCore"]
 loadingStatus: "loading..."
-# Change rich presence action. Playing, Watching and other.
+# Change rich presence action. Playing, Watching, Listening.
 statusType: "WATCHING"
+#  Variables DND, IDLE, ONLINE, INVISIBLE.
 status: "ONLINE"
 
 ##########################

@@ -8,8 +8,8 @@ import net.md_5.bungee.api.ChatColor;
 
 public class Main extends Plugin {
     private static Main instance;
-    private DiscordBot bot = new DiscordBot();
-    private Config config = new Config();
+    private final DiscordBot bot = new DiscordBot();
+    private final Config config = new Config();
 
     @Override
     public void onEnable() {
@@ -23,7 +23,6 @@ public class Main extends Plugin {
     @Override
     public void onDisable() {
         instance = null;
-        //discord bot
         bot.shutdown();
     }
 
@@ -31,8 +30,8 @@ public class Main extends Plugin {
         return instance;
     }
 
-    public Configuration getConfig() {
-        return config.getConfig();
+    public Config getConfig() {
+        return config;
     }
 
 }
