@@ -15,17 +15,17 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class ReadyListener extends ListenerAdapter {
-    private final Main istance = Main.getInstance();
+    private final Main instance = Main.getInstance();
     private final Config config = Main.getInstance().getConfig();
 
     @Override
     public void onReady(net.dv8tion.jda.api.events.ReadyEvent event) {
-        istance.getLogger().info(ChatColor.GREEN + "DiscordBot Ready!");
+        instance.getLogger().info(ChatColor.GREEN + "DiscordBot Ready!");
 
         // change status
         final int[] currentIndex = {0};
 
-        List<String> status = config.getConfig().getStringList("statusesBot");
+        List<String> status = config.getConfig().getStringList("presenceStatuses");
 
         if(status.size() > 1) {
             Main.getInstance().getProxy().getScheduler().schedule(Main.getInstance(), new Runnable() {
@@ -34,7 +34,7 @@ public class ReadyListener extends ListenerAdapter {
                     event.getJDA().getPresence().setActivity(DiscordBot.getInstance().getConfigActivity(status.get(currentIndex[0])));
                     currentIndex[0] = (currentIndex[0] +1) % status.size();
                 }
-            }, 1L, config.getInt("statusChangePeriod"), TimeUnit.SECONDS);
+            }, 1L, config.getInt("presenceStatusChangePeriod"), TimeUnit.SECONDS);
         } else {
             event.getJDA().getPresence().setActivity(DiscordBot.getInstance().getConfigActivity(status.get(0)));
         }

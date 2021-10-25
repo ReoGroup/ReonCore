@@ -4,29 +4,53 @@
 #                        #
 ###########################
 
+# BOT SETTINGS
+
+# Bot guild id.
+guildid:
+
+# Enable ReoCore-DiscordBot
 enabled: true
+
 # Bot prefix, that setup start of command. For example !ban. Prefix is !.
 prefix: "!"
+
 # Setup help command.
 helpcmd: "help"
+
 # Application token, see https://discordpy.readthedocs.io/en/stable/discord.html
 token: "bot token here"
-automodChannelId: "0"
-automodMcChannelId: "0"
-# Setup channel for logs. When someone gets banned, bot will send message with info about this action
-modLogChannelId: "0"
-chatMcLogChannelId: "0"
-autoroleId: "0"
-reportsChannelId: "0"
-statusesBot: ["Discord API!","ReonCore Plugin","github.com/ReoGroup/ReonCore"]
-statusChangePeriod: 3
+
+# Presence Statuses
+presenceStatuses: ["Discord API!","ReonCore Plugin","github.com/ReoGroup/ReonCore"]
+
+# Presence status on bot loading
 loadingStatus: "loading..."
-# Change rich presence action. https://discord.com/developers/docs/game-sdk/activities#data-models-activitytype-enum.
-statusType: "PLAYING"
+
+# Presence Statuses change period in seconds
+presenceStatusChangePeriod: 3
+
+# Bot status.
+status: "ONLINE"
+
 # If statusType STREAMING you can set custom url
 streamUrl: "https://github.com/ReoGroup/ReonCore"
-#  Variables DND, IDLE, ONLINE, INVISIBLE.
-status: "ONLINE"
+
+# Change rich presence action.See https://discord.com/developers/docs/game-sdk/activities#data-models-activitytype-enum.
+statusType: "PLAYING"
+
+# Channels
+
+
+automodChannelId: 0
+automodMcChannelId: 0
+# Setup channel for logs. When someone gets banned, bot will send message with info about this action
+modLogChannelId: 0
+chatMcLogChannelId: 0
+autoroleId: 0
+reportsChannelId: 0
+
+
 
 ##########################
 #                        #
