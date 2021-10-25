@@ -2,6 +2,7 @@ package github.ReoGroup.ReonCore.BungeeMain;
 
 import github.ReoGroup.ReonCore.internal.entities.Config;
 import github.ReoGroup.ReonCore.internal.entities.discordbot.DiscordBot;
+import github.ReoGroup.ReonCore.internal.utils.VersionUtil;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.api.ChatColor;
@@ -16,6 +17,7 @@ public class Main extends Plugin {
         instance = this;
         config.init();
         bot.init();
+        VersionUtil.checkUpdates();
 
         getLogger().info(ChatColor.AQUA + "Plugin loaded, hello!");
     }
@@ -33,5 +35,4 @@ public class Main extends Plugin {
     public Config getConfig() {
         return config;
     }
-
 }
