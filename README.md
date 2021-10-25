@@ -1,3 +1,10 @@
+<div align="center">
+<br />
+<p>
+    <a href="https://discord.gg/NFAbAyqZpr"><img src="https://media.discordapp.net/attachments/816437620245790722/902138740498108426/1.png?width=1025&height=396"  alt="ReonCore"/></a>
+</p>
+</div>
+
 # ReonCore — is your reliable protection!
 This is the best open source plugin for full server protection! We include several types of protection that are listed below:
 - Protection against spam messages;
