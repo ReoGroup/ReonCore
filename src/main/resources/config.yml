@@ -6,7 +6,7 @@
 
 # BOT SETTINGS
 
-# Bot guild id.
+# Your guild id, where bot will be used
 guildid:
 
 # Enable ReoCore-DiscordBot
@@ -40,11 +40,9 @@ streamUrl: "https://github.com/ReoGroup/ReonCore"
 statusType: "PLAYING"
 
 # Channels
-
-
 automodChannelId: 0
 automodMcChannelId: 0
-# Setup channel for logs. When someone gets banned, bot will send message with info about this action
+# Setup channel for logs. When someone gets banned by moderator, bot will send message with info about this action
 modLogChannelId: 0
 chatMcLogChannelId: 0
 autoroleId: 0
