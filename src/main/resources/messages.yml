@@ -6,3 +6,4 @@ messages:
   error:
     no_perm: "&c You dont have permission!"
     only_player: "&c Only player can execute this command!"
+    url_deleted: "&c<url deleted>"

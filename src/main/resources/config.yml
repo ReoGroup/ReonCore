@@ -55,3 +55,6 @@ reportsChannelId: 0
 #    Minecraft Config    #
 #                        #
 ###########################
+
+# Urls bypass
+trustedUrls: [ "https://github.com/ReoGroup/ReonCore", "https://google.com" ]

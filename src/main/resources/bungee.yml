@@ -2,3 +2,9 @@ name: ReonCore
 main: github.ReoGroup.ReonCore.BungeeMain.Main
 version: 1.0.0
 author: ReoGroup
+
+permissions:
+  reoncore.moderation.ban:
+    description: Allows /ban command
+  reoncore.moderation.bypass:
+    desctiption: Bypass chat auto moderation
