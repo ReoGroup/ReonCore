@@ -1,5 +1,7 @@
 # Plugin messages.
 
+prefix: "&7ReonCore >"
+
 messages:
   error:
     no_perm: "&c You dont have permission!"
