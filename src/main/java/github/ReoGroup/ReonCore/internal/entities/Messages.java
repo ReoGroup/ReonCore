@@ -40,19 +40,11 @@ public class Messages {
         }
     }
 
-    public Configuration getMessageFile() {
+    public Configuration getMessage() {
         return message;
     }
 
     public String getString(String key) {
-        return message.getString(key);
-    }
-
-    public int getInt(String key) {
-        return message.getInt(key);
-    }
-
-    public Object get(String key) {
-        return message.get(key);
+        return ChatColor.translateAlternateColorCodes('&', message.getString(key));
     }
 }
